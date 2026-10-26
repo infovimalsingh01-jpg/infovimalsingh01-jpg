@@ -7,7 +7,7 @@
       <stop offset="100%" stop-color="#03060d" />
     </linearGradient>
 
-    <!-- Native Radial Ambient Glows (No buggy filters, 100% reliable everywhere) -->
+    <!-- Native Radial Ambient Glows -->
     <radialGradient id="radial-left" cx="20%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.12" />
       <stop offset="60%" stop-color="#0078d4" stop-opacity="0.03" />
@@ -16,7 +16,7 @@
 
     <radialGradient id="radial-right" cx="80%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.14" />
-      <stop offset="60%" stop-color="#6366f1" stop-opacity="0.04" />
+      <stop offset="60%" stop-color="#ec4899" stop-opacity="0.03" />
       <stop offset="100%" stop-color="#000000" stop-opacity="0" />
     </radialGradient>
 
@@ -28,8 +28,9 @@
     <!-- Border Gradients -->
     <linearGradient id="neon-border" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00f2fe" />
-      <stop offset="35%" stop-color="#3b82f6" />
-      <stop offset="70%" stop-color="#8b5cf6" />
+      <stop offset="25%" stop-color="#3b82f6" />
+      <stop offset="50%" stop-color="#ff9900" />
+      <stop offset="75%" stop-color="#8b5cf6" />
       <stop offset="100%" stop-color="#00f2fe" />
     </linearGradient>
 
@@ -64,10 +65,6 @@
         0%, 100% { transform: translateY(0px); }
         50% { transform: translateY(-4px); }
       }
-      @keyframes rotateRing {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-      }
       .anim-flow {
         stroke-dasharray: 10, 8;
         animation: dashFlow 4s linear infinite;
@@ -93,7 +90,7 @@
   <!-- Base Canvas -->
   <rect width="1200" height="360" rx="18" fill="url(#canvas-bg)" stroke="url(#neon-border)" stroke-width="2" />
 
-  <!-- Native Radial Glows (No rendering bugs in any browser/proxy) -->
+  <!-- Native Radial Glows -->
   <rect width="1200" height="360" rx="18" fill="url(#radial-left)" />
   <rect width="1200" height="360" rx="18" fill="url(#radial-right)" />
   <rect width="1200" height="360" rx="18" fill="url(#radial-center)" />
@@ -122,7 +119,7 @@
     <path d="M 1170 348 L 1188 348 L 1188 330" />
   </g>
 
-  <!-- ======================== LEFT: DEVOPS AUTOMATION TERMINAL ======================== -->
+  <!-- ======================== LEFT: LIVE MULTI-CLOUD TERMINAL ======================== -->
   <g transform="translate(40, 45)" class="anim-float">
     <!-- Terminal Window Container -->
     <rect x="0" y="0" width="310" height="270" rx="12" fill="#080e1a" stroke="#1e293b" stroke-width="1.5" />
@@ -135,24 +132,24 @@
     <circle cx="18" cy="17" r="4.5" fill="#ef4444" />
     <circle cx="32" cy="17" r="4.5" fill="#f59e0b" />
     <circle cx="46" cy="17" r="4.5" fill="#10b981" />
-    <text x="175" y="21" text-anchor="middle" fill="#64748b" class="font-mono" font-size="11" font-weight="600">vimal@cloud-runner ~</text>
+    <text x="175" y="21" text-anchor="middle" fill="#64748b" class="font-mono" font-size="11" font-weight="600">vimal@multi-cloud-core ~</text>
 
     <!-- Terminal Output Code -->
     <g transform="translate(16, 56)" class="font-mono" font-size="11">
-      <text x="0" y="0" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">terraform plan</tspan></text>
-      <text x="0" y="16" fill="#10b981">✔ Plan: 14 to add, 0 to change</text>
+      <text x="0" y="0" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">docker build -t cloud-app</tspan></text>
+      <text x="0" y="16" fill="#10b981">✔ Multi-stage image built (Alpine)</text>
 
-      <text x="0" y="38" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">tfsec &amp; checkov</tspan></text>
-      <text x="0" y="54" fill="#a855f7">✔ CIS Benchmark 100% Pass</text>
+      <text x="0" y="38" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">terraform plan (Azure+AWS+GCP)</tspan></text>
+      <text x="0" y="54" fill="#a855f7">✔ Multi-cloud modules loaded</text>
 
-      <text x="0" y="76" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">infracost diff</tspan></text>
-      <text x="0" y="92" fill="#34d399">✔ FinOps: -$480/mo (-16%)</text>
+      <text x="0" y="76" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">infracost diff --guardrail</tspan></text>
+      <text x="0" y="92" fill="#34d399">✔ FinOps: -$520/mo across clouds</text>
 
       <text x="0" y="114" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">terraform apply -auto</tspan></text>
-      <text x="0" y="130" fill="#00f2fe" font-weight="700">✔ Apply complete! Azure Blob Lock</text>
+      <text x="0" y="130" fill="#00f2fe" font-weight="700">✔ Apply complete! State locked</text>
 
-      <text x="0" y="152" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">kubectl get ingress</tspan></text>
-      <text x="0" y="168" fill="#e2e8f0">STATUS: Healthy <tspan fill="#00f2fe" class="anim-blink">▋</tspan></text>
+      <text x="0" y="152" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">kubectl get nodes -A</tspan></text>
+      <text x="0" y="168" fill="#e2e8f0">AKS/EKS: 100% Ready <tspan fill="#00f2fe" class="anim-blink">▋</tspan></text>
     </g>
 
     <!-- Terminal Footer Badge -->
@@ -160,25 +157,25 @@
     <rect x="0" y="258" width="310" height="12" rx="12" fill="#060a13" />
     <line x1="0" y1="238" x2="310" y2="238" stroke="#1e293b" stroke-width="1" />
     <circle cx="20" cy="254" r="4" fill="#10b981" class="anim-pulse" />
-    <text x="32" y="258" fill="#94a3b8" class="font-mono" font-size="10.5" font-weight="600">ZERO DRIFT • STATE SECURED</text>
+    <text x="32" y="258" fill="#94a3b8" class="font-mono" font-size="10.5" font-weight="600">ZERO DRIFT • AZURE • AWS • GCP</text>
   </g>
 
 
-  <!-- ======================== CENTER: IDENTITY & DEVSECOPS BRAND ======================== -->
-  <g transform="translate(600, 60)" text-anchor="middle">
+  <!-- ======================== CENTER: IDENTITY & MULTI-CLOUD ARCHITECT ======================== -->
+  <g transform="translate(600, 52)" text-anchor="middle">
 
     <!-- Top Futuristic System Badge -->
-    <g transform="translate(0, -18)">
-      <rect x="-190" y="0" width="380" height="30" rx="15" fill="#0d172a" stroke="#00f2fe" stroke-width="1.2" />
-      <circle cx="-166" cy="15" r="4.5" fill="#00f2fe" class="anim-pulse" />
-      <text x="0" y="20" fill="#00f2fe" class="font-mono" font-weight="800" font-size="11.5" letter-spacing="2">
-        SENIOR CLOUD PLATFORM ARCHITECT
+    <g transform="translate(0, -14)">
+      <rect x="-210" y="0" width="420" height="28" rx="14" fill="#0d172a" stroke="#00f2fe" stroke-width="1.2" />
+      <circle cx="-185" cy="14" r="4.5" fill="#00f2fe" class="anim-pulse" />
+      <text x="0" y="19" fill="#00f2fe" class="font-mono" font-weight="800" font-size="11" letter-spacing="1.5">
+        SENIOR CLOUD PLATFORM ARCHITECT // SRE
       </text>
     </g>
 
     <!-- MAIN NAME: Crystal Clear, High Contrast, Razor Sharp -->
-    <g transform="translate(0, 58)">
-      <!-- Drop shadow for supreme legibility on any monitor -->
+    <g transform="translate(0, 54)">
+      <!-- Deep dark shadow for 100% legibility on any monitor -->
       <text x="2" y="2" fill="#000000" opacity="0.9" class="font-sans" font-weight="900" font-size="44" letter-spacing="2">
         VIMAL PRATAP SINGH
       </text>
@@ -187,49 +184,68 @@
       </text>
     </g>
 
-    <!-- Subtitle Role & Focus -->
-    <text x="0" y="94" fill="#38bdf8" class="font-sans" font-weight="600" font-size="16" letter-spacing="1">
-      Infrastructure as Code • Kubernetes • DevSecOps • SRE
+    <!-- Subtitle Role & Focus: Highlighting Azure, AWS, GCP, Docker & K8s -->
+    <text x="0" y="88" fill="#38bdf8" class="font-sans" font-weight="600" font-size="15.5" letter-spacing="1">
+      Azure • AWS • GCP  |  Docker &amp; Kubernetes  |  Terraform IaC
     </text>
 
     <!-- Continuous Pipeline Ribbon -->
-    <g transform="translate(0, 120)">
-      <rect x="-240" y="0" width="480" height="28" rx="14" fill="#091020" stroke="#334155" stroke-width="1" />
-      <text x="0" y="18" fill="#cbd5e1" class="font-mono" font-size="11.5" font-weight="600">
-        <tspan fill="#a855f7">Git Repo</tspan> ➔ <tspan fill="#38bdf8">TFLint</tspan> ➔ <tspan fill="#ef4444">Security SAST</tspan> ➔ <tspan fill="#10b981">FinOps</tspan> ➔ <tspan fill="#00f2fe">Azure Lock</tspan>
+    <g transform="translate(0, 112)">
+      <rect x="-240" y="0" width="480" height="26" rx="13" fill="#091020" stroke="#334155" stroke-width="1" />
+      <text x="0" y="17" fill="#cbd5e1" class="font-mono" font-size="11" font-weight="600">
+        <tspan fill="#a855f7">Git Repo</tspan> ➔ <tspan fill="#38bdf8">TFLint</tspan> ➔ <tspan fill="#ef4444">Security SAST</tspan> ➔ <tspan fill="#10b981">FinOps</tspan> ➔ <tspan fill="#00f2fe">Cloud Apply</tspan>
       </text>
     </g>
 
-    <!-- Tech Stack Pill Arsenal (Clean, Vibrant, No Experience Clutter) -->
-    <g transform="translate(0, 172)">
-      <!-- Pill 1: Terraform -->
+    <!-- Tech Stack Pill Arsenal (Row 1: Containers & IaC) -->
+    <g transform="translate(0, 156)">
+      <!-- Pill 1: Docker -->
       <g transform="translate(-235, 0)">
-        <rect x="0" y="0" width="110" height="34" rx="8" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.5" />
-        <text x="55" y="22" fill="#d8b4fe" class="font-mono" font-weight="700" font-size="12">Terraform</text>
+        <rect x="0" y="0" width="95" height="30" rx="7" fill="#0f172a" stroke="#2496ed" stroke-width="1.3" />
+        <text x="47" y="20" fill="#60a5fa" class="font-mono" font-weight="700" font-size="11.5">🐳 Docker</text>
       </g>
-      <!-- Pill 2: Azure Cloud -->
-      <g transform="translate(-115, 0)">
-        <rect x="0" y="0" width="110" height="34" rx="8" fill="#0f172a" stroke="#0078d4" stroke-width="1.5" />
-        <text x="55" y="22" fill="#93c5fd" class="font-mono" font-weight="700" font-size="12">Azure ☁</text>
+      <!-- Pill 2: Kubernetes -->
+      <g transform="translate(-130, 0)">
+        <rect x="0" y="0" width="115" height="30" rx="7" fill="#0f172a" stroke="#326ce5" stroke-width="1.3" />
+        <text x="57" y="20" fill="#93c5fd" class="font-mono" font-weight="700" font-size="11.5">☸ Kubernetes</text>
       </g>
-      <!-- Pill 3: Kubernetes -->
-      <g transform="translate(5, 0)">
-        <rect x="0" y="0" width="115" height="34" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
-        <text x="57" y="22" fill="#7dd3fc" class="font-mono" font-weight="700" font-size="12">Kubernetes</text>
+      <!-- Pill 3: Terraform -->
+      <g transform="translate(-5, 0)">
+        <rect x="0" y="0" width="115" height="30" rx="7" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.3" />
+        <text x="57" y="20" fill="#d8b4fe" class="font-mono" font-weight="700" font-size="11.5">⬡ Terraform</text>
       </g>
       <!-- Pill 4: DevSecOps -->
-      <g transform="translate(130, 0)">
-        <rect x="0" y="0" width="110" height="34" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.5" />
-        <text x="55" y="22" fill="#6ee7b7" class="font-mono" font-weight="700" font-size="12">DevSecOps</text>
+      <g transform="translate(120, 0)">
+        <rect x="0" y="0" width="115" height="30" rx="7" fill="#0f172a" stroke="#10b981" stroke-width="1.3" />
+        <text x="57" y="20" fill="#6ee7b7" class="font-mono" font-weight="700" font-size="11.5">🛡️ DevSecOps</text>
+      </g>
+    </g>
+
+    <!-- Tech Stack Pill Arsenal (Row 2: Multi-Cloud Platforms Azure • AWS • GCP) -->
+    <g transform="translate(0, 196)">
+      <!-- Cloud 1: Microsoft Azure -->
+      <g transform="translate(-210, 0)">
+        <rect x="0" y="0" width="130" height="30" rx="7" fill="#0c192e" stroke="#0078d4" stroke-width="1.3" />
+        <text x="65" y="20" fill="#38bdf8" class="font-mono" font-weight="700" font-size="11.5">☁ Azure Cloud</text>
+      </g>
+      <!-- Cloud 2: Amazon AWS -->
+      <g transform="translate(-70, 0)">
+        <rect x="0" y="0" width="130" height="30" rx="7" fill="#1c160c" stroke="#ff9900" stroke-width="1.3" />
+        <text x="65" y="20" fill="#fbbf24" class="font-mono" font-weight="700" font-size="11.5">🟧 AWS Cloud</text>
+      </g>
+      <!-- Cloud 3: Google GCP -->
+      <g transform="translate(70, 0)">
+        <rect x="0" y="0" width="140" height="30" rx="7" fill="#0c1724" stroke="#4285f4" stroke-width="1.3" />
+        <text x="70" y="20" fill="#60a5fa" class="font-mono" font-weight="700" font-size="11.5">🌐 Google Cloud</text>
       </g>
     </g>
 
     <!-- Bottom Telemetry Status Strip -->
-    <g transform="translate(0, 236)">
-      <rect x="-250" y="0" width="500" height="26" rx="13" fill="#060c18" stroke="#1e293b" stroke-width="1" />
-      <circle cx="-230" cy="13" r="4" fill="#10b981" class="anim-pulse" />
-      <text x="-215" y="17" text-anchor="start" fill="#94a3b8" class="font-mono" font-size="10.5" font-weight="600">
-        AVAILABILITY: <tspan fill="#10b981">99.99%</tspan>  •  SHIFT-LEFT SEC  •  ENTERPRISE GITOPS
+    <g transform="translate(0, 246)">
+      <rect x="-240" y="0" width="480" height="24" rx="12" fill="#060c18" stroke="#1e293b" stroke-width="1" />
+      <circle cx="-220" cy="12" r="3.5" fill="#10b981" class="anim-pulse" />
+      <text x="-205" y="16" text-anchor="start" fill="#94a3b8" class="font-mono" font-size="10" font-weight="600">
+        MULTI-CLOUD ARCHITECTURE  •  99.99% UPTIME  •  FINOPS OPTIMIZED
       </text>
     </g>
 
@@ -246,7 +262,7 @@
     <rect x="0" y="24" width="300" height="10" fill="url(#terminal-header-grad)" />
     <line x1="0" y1="34" x2="300" y2="34" stroke="#1e293b" stroke-width="1" />
     <circle cx="20" cy="17" r="4.5" fill="#38bdf8" />
-    <text x="34" y="21" fill="#f8fafc" class="font-mono" font-size="11" font-weight="700">PLATFORM TELEMETRY</text>
+    <text x="34" y="21" fill="#f8fafc" class="font-mono" font-size="11" font-weight="700">MULTI-CLOUD TELEMETRY</text>
 
     <!-- Inner Central Core -->
     <g transform="translate(150, 110)">
@@ -257,14 +273,14 @@
       <!-- Center Hexagon Shield -->
       <polygon points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15" fill="#0f172a" stroke="#8b5cf6" stroke-width="2" />
       
-      <!-- Cloud Glyphs Inside -->
+      <!-- Multi-Cloud Cluster Glyph Inside -->
       <circle cx="0" cy="0" r="10" fill="#38bdf8" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1.5" />
       <path d="M-6 0 L6 0 M0 -6 L0 6" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" />
     </g>
 
     <!-- Telemetry Cards Below -->
     <g transform="translate(20, 172)">
-      <!-- Metric 1: Azure State Lock -->
+      <!-- Metric 1: Multi-Cloud State Lock -->
       <g transform="translate(0, 0)">
         <rect x="0" y="0" width="260" height="36" rx="8" fill="#0d172a" stroke="#0078d4" stroke-width="1.2" />
         <circle cx="18" cy="18" r="4" fill="#0078d4" />
@@ -273,12 +289,12 @@
         <text x="245" y="22" text-anchor="end" fill="#10b981" class="font-mono" font-size="11" font-weight="800">✔</text>
       </g>
 
-      <!-- Metric 2: Drift Detection Engine -->
+      <!-- Metric 2: Multi-Cloud Drift & Container Status -->
       <g transform="translate(0, 44)">
         <rect x="0" y="0" width="260" height="36" rx="8" fill="#0d172a" stroke="#10b981" stroke-width="1.2" />
         <circle cx="18" cy="18" r="4" fill="#10b981" class="anim-pulse" />
-        <text x="32" y="16" fill="#f8fafc" class="font-sans" font-size="11" font-weight="700">Continuous Drift Engine</text>
-        <text x="32" y="29" fill="#34d399" class="font-mono" font-size="9.5">Sync Status: In-Sync (0 Diff)</text>
+        <text x="32" y="16" fill="#f8fafc" class="font-sans" font-size="11" font-weight="700">Continuous Drift &amp; Containers</text>
+        <text x="32" y="29" fill="#34d399" class="font-mono" font-size="9.5">Docker • K8s • Zero Drift (0 Diff)</text>
         <text x="245" y="22" text-anchor="end" fill="#10b981" class="font-mono" font-size="11" font-weight="800">✔</text>
       </g>
     </g>

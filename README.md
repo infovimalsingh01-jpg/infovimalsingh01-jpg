@@ -9,7 +9,7 @@
 
   <!-- Dynamic Animated Typing Header -->
   <a href="https://github.com/infovimalsingh01-jpg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&pause=1000&color=00D2FF&center=true&vCenter=true&width=780&lines=Senior+DevOps+%26+Cloud+Platform+Engineer;Enterprise+Terraform+%26+Terragrunt+IaC+Architect;DevSecOps%2C+Shift-Left+Security+%26+FinOps+Automation;Kubernetes+(AKS%2FEKS)%2C+GitOps+%26+Azure+Cloud+Ecosystem;Site+Reliability+Engineering+%26+Continuous+Drift+Detection" alt="Typing SVG Banner" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&pause=1000&color=00D2FF&center=true&vCenter=true&width=820&lines=Senior+DevOps+%26+Multi-Cloud+Platform+Engineer;10%2B+Years+IT+Experience+%7C+5%2B+Years+DevOps;Multi-Cloud+Architect+(Azure+%E2%80%A2+AWS+%E2%80%A2+GCP);Containers+%26+K8s+(Docker+%E2%80%A2+Kubernetes+AKS%2FEKS);Enterprise+Terraform+%26+Terragrunt+IaC+Specialist;DevSecOps%2C+Shift-Left+Security+%26+FinOps+Automation" alt="Typing SVG Banner" />
   </a>
 
   <br/>
@@ -23,7 +23,10 @@
       <img src="https://img.shields.io/badge/Overall_IT_Experience-10%2B_Years-7928ca?style=for-the-badge&logo=azurepipelines&logoColor=white" alt="Overall IT Experience 10+ Years" />
     </a>
     <a href="https://github.com/infovimalsingh01-jpg">
-      <img src="https://img.shields.io/badge/Cloud_Core-Azure_%7C_Multi--Cloud-0078d4?style=for-the-badge&logo=microsoftazure&logoColor=white" alt="Azure Cloud Core" />
+      <img src="https://img.shields.io/badge/Multi--Cloud-Azure_%7C_AWS_%7C_GCP-0078d4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Multi Cloud" />
+    </a>
+    <a href="https://github.com/infovimalsingh01-jpg">
+      <img src="https://img.shields.io/badge/Containers-Docker_%26_Kubernetes-2496ed?style=for-the-badge&logo=docker&logoColor=white" alt="Docker & Kubernetes" />
     </a>
     <a href="https://github.com/infovimalsingh01-jpg">
       <img src="https://img.shields.io/badge/IaC_Specialist-Terraform_%26_Terragrunt-844fba?style=for-the-badge&logo=terraform&logoColor=white" alt="Terraform Specialist" />
@@ -55,9 +58,9 @@
 
 I am a **Senior DevOps & Cloud Platform Engineer** with **over 5 years of specialized hands-on DevOps/SRE engineering** and **more than 10 years of comprehensive IT infrastructure experience**. 
 
-My core focus centers on architecting enterprise-scale cloud foundations across **Microsoft Azure** and multi-cloud environments, engineering declarative **Terraform / Terragrunt** modular architectures, and establishing automated **DevSecOps pipelines** embedded with shift-left security audits, continuous drift detection, and automated FinOps budget guardrails.
+My core focus centers on architecting enterprise-scale cloud foundations across **Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP)**, packaging production workloads with **Docker**, orchestrating resilient clusters with **Kubernetes (AKS/EKS/GKE)**, engineering declarative **Terraform / Terragrunt** modular architectures, and establishing automated **DevSecOps pipelines** embedded with shift-left security audits, continuous drift detection, and automated FinOps budget guardrails.
 
-* 🔭 **Specialization:** Enterprise IaC (Terraform), Cloud Infrastructure (Azure / AWS), Kubernetes (AKS/EKS), GitOps & Site Reliability Engineering (SRE).
+* 🔭 **Specialization:** Enterprise IaC (Terraform), Multi-Cloud Platforms (Azure, AWS, GCP), Containerization (Docker), Kubernetes (AKS/EKS/GKE), GitOps & Site Reliability Engineering (SRE).
 * 🛡️ **DevSecOps Philosophy:** Zero-trust architecture with integrated SAST scanning (`tfsec`, `Checkov`, `Trivy`) before infrastructure code ever reaches production.
 * 💰 **FinOps Integration:** Automated pre-deployment cost estimations using `Infracost` with branch-level budget enforcement.
 * ⚡ **Resilience & Governance:** High availability (99.99% target), automated state locking with Azure Blob Storage, and scheduled drift reconciliation.
