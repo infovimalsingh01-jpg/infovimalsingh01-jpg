@@ -1,0 +1,174 @@
+name: "Enterprise Terraform & DevSecOps CI/CD Pipeline"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    # Continuous Drift Detection Cron (Executes daily at 02:00 UTC)
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  id-token: write
+  security-events: write
+
+jobs:
+  # -------------------------------------------------------------------------------------------------------------------
+  # STAGE 2: LINTING & CANONICAL FORMATTING
+  # -------------------------------------------------------------------------------------------------------------------
+  lint-and-format:
+    name: "Stage 2: Format & TFLint"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout Terraform Git Repo"
+        uses: actions/checkout@v4
+
+      - name: "Setup Terraform Engine"
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.0"
+
+      - name: "Terraform Format Verification"
+        run: terraform fmt -check -recursive
+
+      - name: "Setup TFLint"
+        uses: terraform-linters/setup-tflint@v4
+        with:
+          tflint_version: "v0.50.0"
+
+      - name: "Run TFLint with Azure Ruleset"
+        run: |
+          tflint --init
+          tflint --recursive
+
+  # -------------------------------------------------------------------------------------------------------------------
+  # STAGE 3: SHIFT-LEFT SECURITY & VULNERABILITY AUDITING (TFSEC / CHECKOV / TRIVY)
+  # -------------------------------------------------------------------------------------------------------------------
+  security-scan:
+    name: "Stage 3: Security SAST (tfsec / Checkov / Trivy)"
+    needs: [lint-and-format]
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout Code"
+        uses: actions/checkout@v4
+
+      - name: "Run tfsec Static Analysis"
+        uses: aquasecurity/tfsec-action@v1.0.3
+        with:
+          soft_fail: false
+
+      - name: "Run Checkov Policy-as-Code"
+        uses: bridgecrewio/checkov-action@master
+        with:
+          framework: terraform
+          output_format: cli,sarif
+          output_file_path: console,results.sarif
+          soft_fail: false
+
+      - name: "Run Trivy Config Scanner"
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'config'
+          hide-progress: false
+          format: 'table'
+          exit-code: '0'
+
+  # -------------------------------------------------------------------------------------------------------------------
+  # STAGE 4: CLOUD FINOPS & COST ESTIMATION (INFRACOST)
+  # -------------------------------------------------------------------------------------------------------------------
+  cost-estimation:
+    name: "Stage 4: FinOps Cost Estimation (Infracost)"
+    needs: [security-scan]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: "Checkout Code"
+        uses: actions/checkout@v4
+
+      - name: "Setup Infracost"
+        uses: infracost/actions/setup@v3
+        with:
+          api_key: ${{ secrets.INFRACOST_API_KEY }}
+
+      - name: "Generate Infracost Cost Breakdown"
+        run: |
+          infracost breakdown --path . \
+            --format=json \
+            --out-file=/tmp/infracost.json
+
+      - name: "Post Infracost PR Comment"
+        uses: infracost/actions/comment@v3
+        with:
+          path: /tmp/infracost.json
+          behavior: update
+
+  # -------------------------------------------------------------------------------------------------------------------
+  # STAGE 5: TERRAFORM SPECULATIVE PLAN & DRIFT DETECTION
+  # -------------------------------------------------------------------------------------------------------------------
+  terraform-plan:
+    name: "Stage 5: Terraform Plan & Drift Verification"
+    needs: [security-scan]
+    runs-on: ubuntu-latest
+    env:
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+    steps:
+      - name: "Checkout Code"
+        uses: actions/checkout@v4
+
+      - name: "Setup Terraform Engine"
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.0"
+
+      - name: "Initialize Remote State Backend"
+        run: terraform init
+
+      - name: "Generate Speculative Plan"
+        id: plan
+        run: terraform plan -no-color -out=tfplan
+
+      - name: "Check for Infrastructure Drift"
+        if: github.event_name == 'schedule'
+        run: |
+          terraform plan -detailed-exitcode -no-color || exit_code=$?
+          if [ $exit_code -eq 2 ]; then
+            echo "::error::Infrastructure Drift Detected! Manual cloud changes diverged from code state."
+            exit 1
+          fi
+
+  # -------------------------------------------------------------------------------------------------------------------
+  # STAGE 6 & 7: MANUAL APPROVAL GATE & TERRAFORM APPLY (REMOTE STATE VIA AZURE BLOB)
+  # -------------------------------------------------------------------------------------------------------------------
+  terraform-apply:
+    name: "Stage 6 & 7: Production Gate Approval & Apply"
+    needs: [terraform-plan]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment:
+      name: "production" # Enforces GitHub Environment protection rules (Stage 6 Gate)
+    runs-on: ubuntu-latest
+    env:
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+    steps:
+      - name: "Checkout Code"
+        uses: actions/checkout@v4
+
+      - name: "Setup Terraform Engine"
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.0"
+
+      - name: "Initialize Remote State Backend"
+        run: terraform init
+
+      - name: "Terraform Apply (Locked State)"
+        run: terraform apply -auto-approve

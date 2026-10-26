@@ -193,12 +193,13 @@ flowchart TD
 
 ---
 
-### 🌟 Enterprise Engineering Focus Areas
+### 🌟 Featured Repositories & Enterprise Focus Areas
 
-- 🏗️ **Azure Enterprise Landing Zones:** Implementing scalable Hub-and-Spoke networking, VNet Peering, Azure Firewall, Application Gateways, and Private Endpoints completely coded in modular Terraform.
-- ☸️ **Kubernetes Platform Engineering:** Automated deployment of Azure Kubernetes Service (AKS) clusters integrated with GitOps delivery (ArgoCD), Ingress Controllers, Cert-Manager, and Azure AD Pod Identity.
-- 🔒 **Zero-Trust DevSecOps Pipelines:** Embedding policy-as-code validation (OPA / Checkov) into Azure DevOps and GitHub Actions pipelines to block vulnerable code prior to merge approval.
-- 📉 **Continuous FinOps Governance:** Automating real-time infrastructure cost forecasts with Infracost to establish organizational accountability for cloud consumption.
+* 🚀 [**terraform-azure-enterprise-infrastructure**](./terraform-azure-enterprise-infrastructure): Production-grade, modular Azure Landing Zone engineered using advanced Terraform `for_each` across Resource Groups, Hub & Spoke VNets, Flattened Subnets, Dynamic NSG Rules, Secure Storage Accounts (Azure Blob State Lock), and Azure Key Vault with 7-stage DevSecOps CI/CD pipeline automation.
+* 🏗️ **Azure Enterprise Landing Zones:** Implementing scalable Hub-and-Spoke networking, VNet Peering, Azure Firewall, Application Gateways, and Private Endpoints completely coded in modular Terraform.
+* ☸️ **Kubernetes Platform Engineering:** Automated deployment of Azure Kubernetes Service (AKS) clusters integrated with GitOps delivery (ArgoCD), Ingress Controllers, Cert-Manager, and Azure AD Pod Identity.
+* 🔒 **Zero-Trust DevSecOps Pipelines:** Embedding policy-as-code validation (OPA / Checkov) into Azure DevOps and GitHub Actions pipelines to block vulnerable code prior to merge approval.
+* 📉 **Continuous FinOps Governance:** Automating real-time infrastructure cost forecasts with Infracost to establish organizational accountability for cloud consumption.
 
 ---
 
