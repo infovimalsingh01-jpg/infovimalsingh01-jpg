@@ -9,7 +9,7 @@
 
   <!-- Dynamic Animated Typing Header -->
   <a href="https://github.com/infovimalsingh01-jpg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&pause=1000&color=00D2FF&center=true&vCenter=true&width=750&lines=Senior+DevOps+%26+Cloud+Platform+Engineer;5%2B+Years+DevOps+Experience+%7C+7%2B+Years+IT+Overall;Enterprise+Terraform+%26+Terragrunt+IaC+Architect;DevSecOps%2C+Shift-Left+Security+%26+FinOps+Automation;Kubernetes+(AKS%2FEKS)%2C+GitOps+%26+Azure+Cloud+Ecosystem" alt="Typing SVG Banner" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&pause=1000&color=00D2FF&center=true&vCenter=true&width=780&lines=Senior+DevOps+%26+Cloud+Platform+Engineer;Enterprise+Terraform+%26+Terragrunt+IaC+Architect;DevSecOps%2C+Shift-Left+Security+%26+FinOps+Automation;Kubernetes+(AKS%2FEKS)%2C+GitOps+%26+Azure+Cloud+Ecosystem;Site+Reliability+Engineering+%26+Continuous+Drift+Detection" alt="Typing SVG Banner" />
   </a>
 
   <br/>
