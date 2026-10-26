@@ -37,14 +37,17 @@
   </p>
 
   <p align="center">
+    <a href="https://www.linkedin.com/in/vimal-pratap-singh-102ba93a5/">
+      <img src="https://img.shields.io/badge/LinkedIn-Connect_Profile-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn Profile" />
+    </a>
+    <a href="https://www.naukri.com/mnjuser/profile?id=&altresid">
+      <img src="https://img.shields.io/badge/Naukri.com-Candidate_Profile-0078DB?style=flat-square&logo=readdotcv&logoColor=white" alt="Naukri.com Profile" />
+    </a>
     <a href="mailto:info.vimalsingh01@gmail.com">
-      <img src="https://img.shields.io/badge/Status-Open_for_Opportunities-success?style=flat-square&logo=git&logoColor=white" alt="Status Open" />
+      <img src="https://img.shields.io/badge/Email-Get_In_Touch-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email Me" />
     </a>
     <a href="https://github.com/infovimalsingh01-jpg?tab=repositories">
-      <img src="https://img.shields.io/badge/Focus-Production_Scale_Automation-blue?style=flat-square&logo=github&logoColor=white" alt="Focus Automation" />
-    </a>
-    <a href="mailto:info.vimalsingh01@gmail.com">
-      <img src="https://img.shields.io/badge/Contact-Get_In_Touch-orange?style=flat-square&logo=gmail&logoColor=white" alt="Email Me" />
+      <img src="https://img.shields.io/badge/Status-Open_for_Opportunities-success?style=flat-square&logo=git&logoColor=white" alt="Status Open" />
     </a>
   </p>
 
@@ -55,6 +58,9 @@
 ### 👨‍💻 Executive Profile & Background
 
 > *"Building resilient, self-healing, and cost-optimized cloud platforms through immutable Infrastructure-as-Code and end-to-end DevSecOps automation."*
+
+> 💼 **Open for Roles:** Senior DevOps Engineer • Cloud Platform Architect • SRE Lead  
+> 🌐 **Direct Profiles:** [LinkedIn Profile](https://www.linkedin.com/in/vimal-pratap-singh-102ba93a5/) • [Naukri.com Profile](https://www.naukri.com/mnjuser/profile?id=&altresid) • [Email Directly](mailto:info.vimalsingh01@gmail.com)
 
 I am a **Senior DevOps & Cloud Platform Engineer** with **over 5 years of specialized hands-on DevOps/SRE engineering** and **more than 10 years of comprehensive IT infrastructure experience**. 
 
@@ -200,14 +206,19 @@ flowchart TD
 
 <div align="center">
 
+  <p>Whether you are hiring for Senior DevOps / Cloud roles, looking to collaborate on Kubernetes &amp; Terraform architectures, or want to discuss engineering:</p>
+
+  <a href="https://www.linkedin.com/in/vimal-pratap-singh-102ba93a5/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect_with_Vimal-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile" />
+  </a>
+  <a href="https://www.naukri.com/mnjuser/profile?id=&altresid">
+    <img src="https://img.shields.io/badge/Naukri.com-Candidate_Profile-0078DB?style=for-the-badge&logo=readdotcv&logoColor=white" alt="Naukri.com Profile" />
+  </a>
   <a href="mailto:info.vimalsingh01@gmail.com">
     <img src="https://img.shields.io/badge/Email-info.vimalsingh01@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Vimal" />
   </a>
   <a href="https://github.com/infovimalsingh01-jpg">
     <img src="https://img.shields.io/badge/GitHub-infovimalsingh01--jpg-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile" />
-  </a>
-  <a href="https://linkedin.com">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile" />
   </a>
 
   <br/><br/>
