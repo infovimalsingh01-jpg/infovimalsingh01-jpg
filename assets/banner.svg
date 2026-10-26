@@ -1,311 +1,288 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
   <defs>
     <!-- Background Gradient -->
-    <linearGradient id="bg-matrix" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#030712" />
-      <stop offset="35%" stop-color="#0b1120" />
-      <stop offset="70%" stop-color="#070d1d" />
-      <stop offset="100%" stop-color="#02040a" />
+    <linearGradient id="canvas-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040711" />
+      <stop offset="50%" stop-color="#080e1e" />
+      <stop offset="100%" stop-color="#03060d" />
     </linearGradient>
 
-    <!-- Border Gradient -->
-    <linearGradient id="border-stream" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Native Radial Ambient Glows (No buggy filters, 100% reliable everywhere) -->
+    <radialGradient id="radial-left" cx="20%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.12" />
+      <stop offset="60%" stop-color="#0078d4" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="radial-right" cx="80%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.14" />
+      <stop offset="60%" stop-color="#6366f1" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="radial-center" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Border Gradients -->
+    <linearGradient id="neon-border" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00f2fe" />
-      <stop offset="30%" stop-color="#3b82f6" />
-      <stop offset="60%" stop-color="#8b5cf6" />
-      <stop offset="85%" stop-color="#ec4899" />
+      <stop offset="35%" stop-color="#3b82f6" />
+      <stop offset="70%" stop-color="#8b5cf6" />
       <stop offset="100%" stop-color="#00f2fe" />
     </linearGradient>
 
-    <!-- Name Text Gradient -->
-    <linearGradient id="title-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="terminal-header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#111c33" />
+      <stop offset="100%" stop-color="#0c1322" />
+    </linearGradient>
+
+    <!-- Ultra-Crisp High-Contrast Text Gradient -->
+    <linearGradient id="crystal-name" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="65%" stop-color="#f0f9ff" />
-      <stop offset="100%" stop-color="#38bdf8" />
+      <stop offset="30%" stop-color="#e0f2fe" />
+      <stop offset="70%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#00f2fe" />
     </linearGradient>
 
-    <!-- Terminal Box Gradient -->
-    <linearGradient id="terminal-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d1527" stop-opacity="0.95" />
-      <stop offset="100%" stop-color="#060913" stop-opacity="0.98" />
-    </linearGradient>
-
-    <!-- Glow Filters -->
-    <filter id="super-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-
-    <filter id="soft-neon" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-
+    <!-- Simple CSS Keyframe Animations -->
     <style>
-      @keyframes radarSweep {
+      @keyframes dashFlow {
+        from { stroke-dashoffset: 120; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes pulseDot {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 1; }
+      }
+      @keyframes blinkCursor {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes floatY {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-4px); }
+      }
+      @keyframes rotateRing {
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
       }
-      @keyframes floatSlow {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-6px); }
+      .anim-flow {
+        stroke-dasharray: 10, 8;
+        animation: dashFlow 4s linear infinite;
       }
-      @keyframes floatSlowReverse {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(6px); }
+      .anim-blink {
+        animation: blinkCursor 1s infinite;
       }
-      @keyframes pulseGlow {
-        0%, 100% { opacity: 0.3; }
-        50% { opacity: 0.8; }
+      .anim-pulse {
+        animation: pulseDot 2.5s ease-in-out infinite;
       }
-      @keyframes blinkCursor {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-      }
-      @keyframes laserLine {
-        0% { stroke-dashoffset: 600; }
-        100% { stroke-dashoffset: 0; }
-      }
-
-      .radar-spin {
-        animation: radarSweep 14s linear infinite;
-        transform-origin: 1040px 190px;
-      }
-      .orbit-spin-reverse {
-        animation: radarSweep 22s linear infinite reverse;
-        transform-origin: 1040px 190px;
-      }
-      .float-box-1 {
-        animation: floatSlow 4s ease-in-out infinite;
-      }
-      .float-box-2 {
-        animation: floatSlowReverse 5s ease-in-out infinite;
-      }
-      .pulse-item {
-        animation: pulseGlow 3s ease-in-out infinite;
-      }
-      .cursor-blink {
-        animation: blinkCursor 1s step-end infinite;
-      }
-      .laser-dash {
-        stroke-dasharray: 80, 80;
-        animation: laserLine 6s linear infinite;
-      }
-
-      .font-sans {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      .anim-float {
+        animation: floatY 4s ease-in-out infinite;
       }
       .font-mono {
-        font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', 'Cascadia Code', monospace;
+        font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+      }
+      .font-sans {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       }
     </style>
   </defs>
 
-  <!-- Outer Banner Canvas -->
-  <rect width="1200" height="380" rx="22" fill="url(#bg-matrix)" stroke="url(#border-stream)" stroke-width="2" />
+  <!-- Base Canvas -->
+  <rect width="1200" height="360" rx="18" fill="url(#canvas-bg)" stroke="url(#neon-border)" stroke-width="2" />
 
-  <!-- Background Isometric Grid Mesh -->
-  <g opacity="0.07" stroke="#38bdf8" stroke-width="1">
+  <!-- Native Radial Glows (No rendering bugs in any browser/proxy) -->
+  <rect width="1200" height="360" rx="18" fill="url(#radial-left)" />
+  <rect width="1200" height="360" rx="18" fill="url(#radial-right)" />
+  <rect width="1200" height="360" rx="18" fill="url(#radial-center)" />
+
+  <!-- Blueprint Subtle Background Grid -->
+  <g opacity="0.08" stroke="#38bdf8" stroke-width="1">
     <line x1="0" y1="60" x2="1200" y2="60" />
     <line x1="0" y1="120" x2="1200" y2="120" />
     <line x1="0" y1="180" x2="1200" y2="180" />
     <line x1="0" y1="240" x2="1200" y2="240" />
     <line x1="0" y1="300" x2="1200" y2="300" />
-    <line x1="120" y1="0" x2="120" y2="380" />
-    <line x1="240" y1="0" x2="240" y2="380" />
-    <line x1="360" y1="0" x2="360" y2="380" />
-    <line x1="480" y1="0" x2="480" y2="380" />
-    <line x1="600" y1="0" x2="600" y2="380" />
-    <line x1="720" y1="0" x2="720" y2="380" />
-    <line x1="840" y1="0" x2="840" y2="380" />
-    <line x1="960" y1="0" x2="960" y2="380" />
-    <line x1="1080" y1="0" x2="1080" y2="380" />
+    <line x1="80" y1="0" x2="80" y2="360" />
+    <line x1="200" y1="0" x2="200" y2="360" />
+    <line x1="340" y1="0" x2="340" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="860" y1="0" x2="860" y2="360" />
+    <line x1="1000" y1="0" x2="1000" y2="360" />
+    <line x1="1120" y1="0" x2="1120" y2="360" />
   </g>
 
-  <!-- Ambient Light Orbs -->
-  <circle cx="150" cy="190" r="140" fill="#00f2fe" opacity="0.08" filter="url(#super-glow)" class="pulse-item" />
-  <circle cx="1040" cy="190" r="160" fill="#8b5cf6" opacity="0.09" filter="url(#super-glow)" class="pulse-item" />
-  <circle cx="600" cy="170" r="120" fill="#3b82f6" opacity="0.07" filter="url(#super-glow)" class="pulse-item" />
+  <!-- Corner Tech Accents -->
+  <g stroke="#00f2fe" stroke-width="2" fill="none" opacity="0.6">
+    <path d="M 12 30 L 12 12 L 30 12" />
+    <path d="M 1170 12 L 1188 12 L 1188 30" />
+    <path d="M 12 330 L 12 348 L 30 348" />
+    <path d="M 1170 348 L 1188 348 L 1188 330" />
+  </g>
 
-  <!-- Laser Cybernetic Lines connecting components -->
-  <path d="M 330 190 L 410 190" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6" />
-  <path d="M 790 190 L 890 190" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6" />
-
-  <!-- ======================== LEFT SECTION: LIVE CLI CLOUD TERMINAL ======================== -->
-  <g transform="translate(45, 65)" class="float-box-1">
-    <!-- Terminal Outer Container -->
-    <rect x="0" y="0" width="285" height="250" rx="14" fill="url(#terminal-bg)" stroke="#1e293b" stroke-width="1.5" filter="url(#soft-neon)" />
-    <!-- Glowing Top Accent Line -->
-    <path d="M 14 0 L 271 0" stroke="url(#border-stream)" stroke-width="2" />
-
-    <!-- Terminal Header Bar -->
-    <rect x="0" y="0" width="285" height="34" rx="14" fill="#0f172a" fill-opacity="0.8" />
-    <rect x="0" y="24" width="285" height="10" fill="#0f172a" fill-opacity="0.8" />
+  <!-- ======================== LEFT: DEVOPS AUTOMATION TERMINAL ======================== -->
+  <g transform="translate(40, 45)" class="anim-float">
+    <!-- Terminal Window Container -->
+    <rect x="0" y="0" width="310" height="270" rx="12" fill="#080e1a" stroke="#1e293b" stroke-width="1.5" />
+    <!-- Terminal Header -->
+    <rect x="0" y="0" width="310" height="34" rx="12" fill="url(#terminal-header-grad)" />
+    <rect x="0" y="24" width="310" height="10" fill="url(#terminal-header-grad)" />
+    <line x1="0" y1="34" x2="310" y2="34" stroke="#1e293b" stroke-width="1" />
+    
     <!-- Window Control Buttons -->
-    <circle cx="20" cy="17" r="5" fill="#ef4444" />
-    <circle cx="36" cy="17" r="5" fill="#f59e0b" />
-    <circle cx="52" cy="17" r="5" fill="#10b981" />
-    <text x="142" y="21" text-anchor="middle" fill="#64748b" class="font-mono" font-size="11" font-weight="600">bash • terraform-run</text>
+    <circle cx="18" cy="17" r="4.5" fill="#ef4444" />
+    <circle cx="32" cy="17" r="4.5" fill="#f59e0b" />
+    <circle cx="46" cy="17" r="4.5" fill="#10b981" />
+    <text x="175" y="21" text-anchor="middle" fill="#64748b" class="font-mono" font-size="11" font-weight="600">vimal@cloud-runner ~</text>
 
-    <!-- Terminal Content (Monospace CLI Text) -->
+    <!-- Terminal Output Code -->
     <g transform="translate(16, 56)" class="font-mono" font-size="11">
-      <!-- Line 1: Command -->
-      <text x="0" y="0" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f8fafc">terraform init</tspan></text>
-      <text x="0" y="16" fill="#10b981">✔ Azure backend initialized</text>
+      <text x="0" y="0" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">terraform plan</tspan></text>
+      <text x="0" y="16" fill="#10b981">✔ Plan: 14 to add, 0 to change</text>
 
-      <!-- Line 2: Plan -->
-      <text x="0" y="40" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f8fafc">tflint &amp;&amp; tfsec</tspan></text>
-      <text x="0" y="56" fill="#a855f7">✔ 0 critical • Shift-Left Pass</text>
+      <text x="0" y="38" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">tfsec &amp; checkov</tspan></text>
+      <text x="0" y="54" fill="#a855f7">✔ CIS Benchmark 100% Pass</text>
 
-      <!-- Line 3: Infracost -->
-      <text x="0" y="80" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f8fafc">infracost breakdown</tspan></text>
-      <text x="0" y="96" fill="#34d399">Monthly: -$420 (FinOps -18%)</text>
+      <text x="0" y="76" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">infracost diff</tspan></text>
+      <text x="0" y="92" fill="#34d399">✔ FinOps: -$480/mo (-16%)</text>
 
-      <!-- Line 4: Apply -->
-      <text x="0" y="120" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f8fafc">terraform apply -auto</tspan></text>
-      <text x="0" y="136" fill="#00f2fe" font-weight="700">Apply complete! 12 added.</text>
+      <text x="0" y="114" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">terraform apply -auto</tspan></text>
+      <text x="0" y="130" fill="#00f2fe" font-weight="700">✔ Apply complete! Azure Blob Lock</text>
 
-      <!-- Line 5: Active Prompt with Blinking Cursor -->
-      <text x="0" y="160" fill="#38bdf8" font-weight="700">❯ <tspan fill="#94a3b8">kubectl get nodes</tspan> <tspan fill="#00f2fe" class="cursor-blink">▋</tspan></text>
+      <text x="0" y="152" fill="#38bdf8" font-weight="700">❯ <tspan fill="#f1f5f9">kubectl get ingress</tspan></text>
+      <text x="0" y="168" fill="#e2e8f0">STATUS: Healthy <tspan fill="#00f2fe" class="anim-blink">▋</tspan></text>
     </g>
 
-    <!-- Status Ribbon Bottom of Terminal -->
-    <rect x="0" y="222" width="285" height="28" rx="0" fill="#080d19" />
-    <path d="M 0 222 L 285 222" stroke="#1e293b" stroke-width="1" />
-    <circle cx="18" cy="236" r="4" fill="#10b981" />
-    <text x="30" y="240" fill="#94a3b8" class="font-mono" font-size="10.5">STATE: LOCKED (AZURE BLOB)</text>
+    <!-- Terminal Footer Badge -->
+    <rect x="0" y="238" width="310" height="32" rx="0" fill="#060a13" />
+    <rect x="0" y="258" width="310" height="12" rx="12" fill="#060a13" />
+    <line x1="0" y1="238" x2="310" y2="238" stroke="#1e293b" stroke-width="1" />
+    <circle cx="20" cy="254" r="4" fill="#10b981" class="anim-pulse" />
+    <text x="32" y="258" fill="#94a3b8" class="font-mono" font-size="10.5" font-weight="600">ZERO DRIFT • STATE SECURED</text>
   </g>
 
 
   <!-- ======================== CENTER: IDENTITY & DEVSECOPS BRAND ======================== -->
-  <g transform="translate(600, 75)" text-anchor="middle">
+  <g transform="translate(600, 60)" text-anchor="middle">
 
     <!-- Top Futuristic System Badge -->
-    <g transform="translate(0, -26)">
-      <rect x="-195" y="0" width="390" height="32" rx="16" fill="#0f172a" stroke="#00f2fe" stroke-width="1.2" filter="url(#soft-neon)" />
-      <circle cx="-168" cy="16" r="4.5" fill="#00f2fe" class="pulse-item" />
-      <text x="-150" y="21" text-anchor="start" fill="#00f2fe" class="font-mono" font-weight="800" font-size="11" letter-spacing="2">
-        PLATFORM ENGINEER // SRE // IAC
-      </text>
-      <text x="156" y="21" text-anchor="end" fill="#94a3b8" class="font-mono" font-weight="600" font-size="10.5">
-        SYS: 99.99% UP
+    <g transform="translate(0, -18)">
+      <rect x="-190" y="0" width="380" height="30" rx="15" fill="#0d172a" stroke="#00f2fe" stroke-width="1.2" />
+      <circle cx="-166" cy="15" r="4.5" fill="#00f2fe" class="anim-pulse" />
+      <text x="0" y="20" fill="#00f2fe" class="font-mono" font-weight="800" font-size="11.5" letter-spacing="2">
+        SENIOR CLOUD PLATFORM ARCHITECT
       </text>
     </g>
 
-    <!-- MAIN NAME (Huge, Imposing, Ultra-Crisp Gradient) -->
-    <text x="0" y="62" fill="url(#title-grad)" class="font-sans" font-weight="900" font-size="46" letter-spacing="2.5" filter="url(#soft-neon)">
-      VIMAL PRATAP SINGH
-    </text>
+    <!-- MAIN NAME: Crystal Clear, High Contrast, Razor Sharp -->
+    <g transform="translate(0, 58)">
+      <!-- Drop shadow for supreme legibility on any monitor -->
+      <text x="2" y="2" fill="#000000" opacity="0.9" class="font-sans" font-weight="900" font-size="44" letter-spacing="2">
+        VIMAL PRATAP SINGH
+      </text>
+      <text x="0" y="0" fill="url(#crystal-name)" class="font-sans" font-weight="900" font-size="44" letter-spacing="2">
+        VIMAL PRATAP SINGH
+      </text>
+    </g>
 
     <!-- Subtitle Role & Focus -->
-    <text x="0" y="100" fill="#38bdf8" class="font-sans" font-weight="600" font-size="17" letter-spacing="1.2">
-      Cloud Infrastructure Architect • Kubernetes Platform • DevSecOps
+    <text x="0" y="94" fill="#38bdf8" class="font-sans" font-weight="600" font-size="16" letter-spacing="1">
+      Infrastructure as Code • Kubernetes • DevSecOps • SRE
     </text>
 
-    <!-- Dynamic Architectural Motto Tag -->
-    <g transform="translate(0, 126)">
-      <rect x="-240" y="0" width="480" height="30" rx="15" fill="#0b1329" stroke="#334155" stroke-width="1" />
-      <text x="0" y="20" fill="#94a3b8" class="font-mono" font-size="12" font-weight="600">
-        <tspan fill="#a855f7">git push</tspan> ➔ <tspan fill="#ef4444">security</tspan> ➔ <tspan fill="#10b981">finops</tspan> ➔ <tspan fill="#00f2fe">zero-drift prod</tspan>
+    <!-- Continuous Pipeline Ribbon -->
+    <g transform="translate(0, 120)">
+      <rect x="-240" y="0" width="480" height="28" rx="14" fill="#091020" stroke="#334155" stroke-width="1" />
+      <text x="0" y="18" fill="#cbd5e1" class="font-mono" font-size="11.5" font-weight="600">
+        <tspan fill="#a855f7">Git Repo</tspan> ➔ <tspan fill="#38bdf8">TFLint</tspan> ➔ <tspan fill="#ef4444">Security SAST</tspan> ➔ <tspan fill="#10b981">FinOps</tspan> ➔ <tspan fill="#00f2fe">Azure Lock</tspan>
       </text>
     </g>
 
-    <!-- Interactive Glowing Tech Arsenal Badges (Replacing cluttered experience cards) -->
-    <g transform="translate(0, 185)">
-      <!-- Tech Badge 1: Terraform -->
+    <!-- Tech Stack Pill Arsenal (Clean, Vibrant, No Experience Clutter) -->
+    <g transform="translate(0, 172)">
+      <!-- Pill 1: Terraform -->
       <g transform="translate(-235, 0)">
-        <rect x="0" y="0" width="110" height="34" rx="10" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.4" />
-        <text x="55" y="22" fill="#c4b5fd" class="font-mono" font-weight="700" font-size="12">Terraform</text>
+        <rect x="0" y="0" width="110" height="34" rx="8" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.5" />
+        <text x="55" y="22" fill="#d8b4fe" class="font-mono" font-weight="700" font-size="12">Terraform</text>
       </g>
-      <!-- Tech Badge 2: Azure Cloud -->
+      <!-- Pill 2: Azure Cloud -->
       <g transform="translate(-115, 0)">
-        <rect x="0" y="0" width="110" height="34" rx="10" fill="#0f172a" stroke="#0078d4" stroke-width="1.4" />
+        <rect x="0" y="0" width="110" height="34" rx="8" fill="#0f172a" stroke="#0078d4" stroke-width="1.5" />
         <text x="55" y="22" fill="#93c5fd" class="font-mono" font-weight="700" font-size="12">Azure ☁</text>
       </g>
-      <!-- Tech Badge 3: Kubernetes -->
+      <!-- Pill 3: Kubernetes -->
       <g transform="translate(5, 0)">
-        <rect x="0" y="0" width="115" height="34" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.4" />
+        <rect x="0" y="0" width="115" height="34" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
         <text x="57" y="22" fill="#7dd3fc" class="font-mono" font-weight="700" font-size="12">Kubernetes</text>
       </g>
-      <!-- Tech Badge 4: DevSecOps -->
+      <!-- Pill 4: DevSecOps -->
       <g transform="translate(130, 0)">
-        <rect x="0" y="0" width="110" height="34" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.4" />
+        <rect x="0" y="0" width="110" height="34" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.5" />
         <text x="55" y="22" fill="#6ee7b7" class="font-mono" font-weight="700" font-size="12">DevSecOps</text>
       </g>
     </g>
 
-    <!-- Bottom Metric / Core Competencies Quick Strip -->
-    <g transform="translate(0, 245)">
-      <text x="0" y="0" fill="#64748b" class="font-mono" font-size="11" letter-spacing="1">
-        DOCKER • HELM • ARGOCD • GITHUB ACTIONS • AZURE DEVOPS • INFRACOST • PROMETHEUS
+    <!-- Bottom Telemetry Status Strip -->
+    <g transform="translate(0, 236)">
+      <rect x="-250" y="0" width="500" height="26" rx="13" fill="#060c18" stroke="#1e293b" stroke-width="1" />
+      <circle cx="-230" cy="13" r="4" fill="#10b981" class="anim-pulse" />
+      <text x="-215" y="17" text-anchor="start" fill="#94a3b8" class="font-mono" font-size="10.5" font-weight="600">
+        AVAILABILITY: <tspan fill="#10b981">99.99%</tspan>  •  SHIFT-LEFT SEC  •  ENTERPRISE GITOPS
       </text>
     </g>
 
   </g>
 
 
-  <!-- ======================== RIGHT SECTION: CYBERNETIC ORBITAL HUB ======================== -->
-  <g transform="translate(1040, 190)" class="float-box-2">
+  <!-- ======================== RIGHT: CLOUD TOPOLOGY & STATE ENGINE ======================== -->
+  <g transform="translate(860, 45)">
+    <!-- Topology Container Card -->
+    <rect x="0" y="0" width="300" height="270" rx="12" fill="#080e1a" stroke="#1e293b" stroke-width="1.5" />
+    
+    <!-- Card Header Bar -->
+    <rect x="0" y="0" width="300" height="34" rx="12" fill="url(#terminal-header-grad)" />
+    <rect x="0" y="24" width="300" height="10" fill="url(#terminal-header-grad)" />
+    <line x1="0" y1="34" x2="300" y2="34" stroke="#1e293b" stroke-width="1" />
+    <circle cx="20" cy="17" r="4.5" fill="#38bdf8" />
+    <text x="34" y="21" fill="#f8fafc" class="font-mono" font-size="11" font-weight="700">PLATFORM TELEMETRY</text>
 
-    <!-- Outer Orbital Ring -->
-    <circle cx="0" cy="0" r="110" fill="none" stroke="#1e293b" stroke-width="1.5" />
-    <circle cx="0" cy="0" r="110" fill="none" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="16, 12" class="orbit-spin-reverse" opacity="0.7" />
+    <!-- Inner Central Core -->
+    <g transform="translate(150, 110)">
+      <!-- Outer Dashed Ring -->
+      <circle cx="0" cy="0" r="48" fill="none" stroke="#334155" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="48" fill="none" stroke="#00f2fe" stroke-width="2" class="anim-flow" />
 
-    <!-- Mid Orbital Ring with Laser Dash -->
-    <circle cx="0" cy="0" r="82" fill="none" stroke="#334155" stroke-width="1.2" />
-    <circle cx="0" cy="0" r="82" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="60, 40" class="radar-spin" filter="url(#soft-neon)" />
-
-    <!-- Inner Core Hexagon -->
-    <polygon points="0,-48 42,-24 42,24 0,48 -42,24 -42,-24" fill="#090d1a" stroke="#a855f7" stroke-width="2.5" filter="url(#soft-neon)" />
-
-    <!-- Central Tech Glyph: Cloud Infinity / Helm Node -->
-    <g fill="none" stroke="#00f2fe" stroke-width="2.5" stroke-linecap="round">
-      <circle cx="0" cy="0" r="14" stroke="#38bdf8" />
-      <line x1="0" y1="-26" x2="0" y2="-14" />
-      <line x1="0" y1="14" x2="0" y2="26" />
-      <line x1="-24" y1="-10" x2="-12" y2="-5" />
-      <line x1="12" y1="5" x2="24" y2="10" />
-      <line x1="-24" y1="10" x2="-12" y2="5" />
-      <line x1="12" y1="-5" x2="24" y2="-10" />
+      <!-- Center Hexagon Shield -->
+      <polygon points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15" fill="#0f172a" stroke="#8b5cf6" stroke-width="2" />
+      
+      <!-- Cloud Glyphs Inside -->
+      <circle cx="0" cy="0" r="10" fill="#38bdf8" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1.5" />
+      <path d="M-6 0 L6 0 M0 -6 L0 6" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" />
     </g>
 
-    <!-- Satellite Orbiting Nodes -->
-    <!-- Node 1: IaC -->
-    <g transform="translate(0, -82)">
-      <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#ec4899" stroke-width="1.5" />
-      <text x="0" y="4" text-anchor="middle" fill="#f472b6" class="font-mono" font-size="9" font-weight="800">IaC</text>
+    <!-- Telemetry Cards Below -->
+    <g transform="translate(20, 172)">
+      <!-- Metric 1: Azure State Lock -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="260" height="36" rx="8" fill="#0d172a" stroke="#0078d4" stroke-width="1.2" />
+        <circle cx="18" cy="18" r="4" fill="#0078d4" />
+        <text x="32" y="16" fill="#f8fafc" class="font-sans" font-size="11" font-weight="700">Remote State Backend</text>
+        <text x="32" y="29" fill="#38bdf8" class="font-mono" font-size="9.5">Azure Blob • Lease Lock Active</text>
+        <text x="245" y="22" text-anchor="end" fill="#10b981" class="font-mono" font-size="11" font-weight="800">✔</text>
+      </g>
+
+      <!-- Metric 2: Drift Detection Engine -->
+      <g transform="translate(0, 44)">
+        <rect x="0" y="0" width="260" height="36" rx="8" fill="#0d172a" stroke="#10b981" stroke-width="1.2" />
+        <circle cx="18" cy="18" r="4" fill="#10b981" class="anim-pulse" />
+        <text x="32" y="16" fill="#f8fafc" class="font-sans" font-size="11" font-weight="700">Continuous Drift Engine</text>
+        <text x="32" y="29" fill="#34d399" class="font-mono" font-size="9.5">Sync Status: In-Sync (0 Diff)</text>
+        <text x="245" y="22" text-anchor="end" fill="#10b981" class="font-mono" font-size="11" font-weight="800">✔</text>
+      </g>
     </g>
 
-    <!-- Node 2: K8s -->
-    <g transform="translate(71, 41)">
-      <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
-      <text x="0" y="4" text-anchor="middle" fill="#7dd3fc" class="font-mono" font-size="9" font-weight="800">K8s</text>
-    </g>
-
-    <!-- Node 3: Sec -->
-    <g transform="translate(-71, 41)">
-      <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#10b981" stroke-width="1.5" />
-      <text x="0" y="4" text-anchor="middle" fill="#6ee7b7" class="font-mono" font-size="9" font-weight="800">SEC</text>
-    </g>
-
-    <!-- Floating HUD Telemetry Tags -->
-    <g transform="translate(-65, -125)">
-      <rect x="0" y="0" width="130" height="24" rx="12" fill="#090d16" stroke="#334155" stroke-width="1" />
-      <circle cx="14" cy="12" r="3.5" fill="#00f2fe" class="pulse-item" />
-      <text x="24" y="16" fill="#38bdf8" class="font-mono" font-weight="700" font-size="10">DRIFT: ZERO ⚡</text>
-    </g>
-
-    <g transform="translate(-75, 115)">
-      <rect x="0" y="0" width="150" height="24" rx="12" fill="#090d16" stroke="#334155" stroke-width="1" />
-      <circle cx="14" cy="12" r="3.5" fill="#10b981" />
-      <text x="24" y="16" fill="#a7f3d0" class="font-mono" font-weight="700" font-size="10">RELIABILITY: 99.99%</text>
-    </g>
   </g>
 
 </svg>

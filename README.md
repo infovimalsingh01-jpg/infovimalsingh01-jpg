@@ -20,7 +20,7 @@
       <img src="https://img.shields.io/badge/DevOps_Experience-5%2B_Years-00f2fe?style=for-the-badge&logo=azuredevops&logoColor=white" alt="DevOps Experience 5+ Years" />
     </a>
     <a href="https://github.com/infovimalsingh01-jpg">
-      <img src="https://img.shields.io/badge/Overall_IT_Experience-7%2B_Years-7928ca?style=for-the-badge&logo=azurepipelines&logoColor=white" alt="Overall IT Experience 7+ Years" />
+      <img src="https://img.shields.io/badge/Overall_IT_Experience-10%2B_Years-7928ca?style=for-the-badge&logo=azurepipelines&logoColor=white" alt="Overall IT Experience 10+ Years" />
     </a>
     <a href="https://github.com/infovimalsingh01-jpg">
       <img src="https://img.shields.io/badge/Cloud_Core-Azure_%7C_Multi--Cloud-0078d4?style=for-the-badge&logo=microsoftazure&logoColor=white" alt="Azure Cloud Core" />
@@ -53,7 +53,7 @@
 
 > *"Building resilient, self-healing, and cost-optimized cloud platforms through immutable Infrastructure-as-Code and end-to-end DevSecOps automation."*
 
-I am a **Senior DevOps & Cloud Platform Engineer** with **over 5 years of specialized hands-on DevOps/SRE engineering** and **more than 7 years of comprehensive IT infrastructure experience**. 
+I am a **Senior DevOps & Cloud Platform Engineer** with **over 5 years of specialized hands-on DevOps/SRE engineering** and **more than 10 years of comprehensive IT infrastructure experience**. 
 
 My core focus centers on architecting enterprise-scale cloud foundations across **Microsoft Azure** and multi-cloud environments, engineering declarative **Terraform / Terragrunt** modular architectures, and establishing automated **DevSecOps pipelines** embedded with shift-left security audits, continuous drift detection, and automated FinOps budget guardrails.
 
@@ -152,7 +152,7 @@ flowchart TD
 ┌─────────────────────────┬─────────────────────────┬─────────────────────────┐
 │     DEPLOYMENT SPEED    │   INFRASTRUCTURE DRIFT  │   EXPERIENCE BACKBONE   │
 │         10x Faster      │         Zero Drift      │      5+ Yrs DevOps      │
-│    Lead Time Reduction  │   Automated Cron Sync   │      7+ Yrs IT Total    │
+│    Lead Time Reduction  │   Automated Cron Sync   │      10+ Yrs IT Total   │
 └─────────────────────────┴─────────────────────────┴─────────────────────────┘
 ```
 
