@@ -9,7 +9,7 @@
 
   <!-- Dynamic Animated Typing Header -->
   <a href="https://github.com/infovimalsingh01-jpg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&pause=1000&color=00D2FF&center=true&vCenter=true&width=820&lines=Senior+DevOps+%26+Multi-Cloud+Platform+Engineer;10%2B+Years+IT+Experience+%7C+5%2B+Years+DevOps;Multi-Cloud+Architect+(Azure+%E2%80%A2+AWS+%E2%80%A2+GCP);Containers+%26+K8s+(Docker+%E2%80%A2+Kubernetes+AKS%2FEKS);Enterprise+Terraform+%26+Terragrunt+IaC+Specialist;DevSecOps%2C+Shift-Left+Security+%26+FinOps+Automation" alt="Typing SVG Banner" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&pause=1000&color=00D2FF&center=true&vCenter=true&width=820&lines=Senior+DevOps+%26+Multi-Cloud+Platform+Engineer;10%2B+Years+IT+Experience+%7C+5%2B+Years+DevOps;Multi-Cloud+Architect+(Azure+%E2%80%A2+AWS+%E2%80%A2+GCP);Containers+%26+K8s+(Docker+%E2%80%A2+Kubernetes+AKS%2FEKS);Enterprise+Terraform+%26+Terragrunt+IaC+Specialist;Enterprise+BI+%26+Data+Systems+(Tableau+%E2%80%A2+Power+BI+%E2%80%A2+MS+SQL);DevSecOps%2C+Shift-Left+Security+%26+FinOps+Automation" alt="Typing SVG Banner" />
   </a>
 
   <br/>
@@ -30,6 +30,12 @@
     </a>
     <a href="https://github.com/infovimalsingh01-jpg">
       <img src="https://img.shields.io/badge/IaC_Specialist-Terraform_%26_Terragrunt-844fba?style=for-the-badge&logo=terraform&logoColor=white" alt="Terraform Specialist" />
+    </a>
+    <a href="https://github.com/infovimalsingh01-jpg">
+      <img src="https://img.shields.io/badge/Tableau_Ecosystem-Server_%7C_Cloud_%7C_Bridge-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Tableau Ecosystem" />
+    </a>
+    <a href="https://github.com/infovimalsingh01-jpg">
+      <img src="https://img.shields.io/badge/Enterprise_Data-MS_SQL_%7C_Power_BI-CC292B?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="MS SQL & Power BI" />
     </a>
     <a href="https://github.com/infovimalsingh01-jpg">
       <img src="https://komarev.com/ghpvc/?username=infovimalsingh01-jpg&color=00d2ff&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views" />
@@ -57,16 +63,17 @@
 
 ### 👨‍💻 Executive Profile & Background
 
-> *"Building resilient, self-healing, and cost-optimized cloud platforms through immutable Infrastructure-as-Code and end-to-end DevSecOps automation."*
+> *"Building resilient, self-healing, and cost-optimized cloud platforms through immutable Infrastructure-as-Code, end-to-end DevSecOps automation, and enterprise-grade Business Intelligence & Data platform engineering."*
 
-> 💼 **Open for Roles:** Senior DevOps Engineer • Cloud Platform Architect • SRE Lead  
+> 💼 **Open for Roles:** Senior DevOps Engineer • Cloud Platform Architect • SRE Lead • Enterprise Data Platform Lead  
 > 🌐 **Direct Profiles:** [LinkedIn Profile](https://www.linkedin.com/in/vimal-pratap-singh-102ba93a5/) • [Naukri.com Profile](https://www.naukri.com/mnjuser/profile?id=&altresid) • [Email Directly](mailto:info.vimalsingh01@gmail.com)
 
 I am a **Senior DevOps & Cloud Platform Engineer** with **over 5 years of specialized hands-on DevOps/SRE engineering** and **more than 10 years of comprehensive IT infrastructure experience**. 
 
-My core focus centers on architecting enterprise-scale cloud foundations across **Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP)**, packaging production workloads with **Docker**, orchestrating resilient clusters with **Kubernetes (AKS/EKS/GKE)**, engineering declarative **Terraform / Terragrunt** modular architectures, and establishing automated **DevSecOps pipelines** embedded with shift-left security audits, continuous drift detection, and automated FinOps budget guardrails.
+My core focus centers on architecting enterprise-scale cloud foundations across **Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP)**, packaging production workloads with **Docker**, orchestrating resilient clusters with **Kubernetes (AKS/EKS/GKE)**, engineering declarative **Terraform / Terragrunt** modular architectures, establishing automated **DevSecOps pipelines** embedded with shift-left security audits, continuous drift detection, automated FinOps budget guardrails, and administering enterprise data platforms including **Tableau (Server, Cloud, Bridge)**, **Microsoft SQL Server (MS SQL)**, and **Microsoft Power BI**.
 
 * 🔭 **Specialization:** Enterprise IaC (Terraform), Multi-Cloud Platforms (Azure, AWS, GCP), Containerization (Docker), Kubernetes (AKS/EKS/GKE), GitOps & Site Reliability Engineering (SRE).
+* 📊 **Enterprise BI & Data Systems:** End-to-end administration of **Tableau Server**, **Tableau Cloud** SaaS governance, hybrid on-prem-to-cloud automated synchronization via **Tableau Bridge**, enterprise **Power BI** dataflows, and high-availability **Microsoft SQL Server (MS SQL)** database administration.
 * 🛡️ **DevSecOps Philosophy:** Zero-trust architecture with integrated SAST scanning (`tfsec`, `Checkov`, `Trivy`) before infrastructure code ever reaches production.
 * 💰 **FinOps Integration:** Automated pre-deployment cost estimations using `Infracost` with branch-level budget enforcement.
 * ⚡ **Resilience & Governance:** High availability (99.99% target), automated state locking with Azure Blob Storage, and scheduled drift reconciliation.
@@ -141,6 +148,8 @@ flowchart TD
 | **CI/CD & Orchestration** | ![Azure DevOps](https://img.shields.io/badge/Azure_DevOps_Pipelines-0078D7?style=flat-square&logo=azure-devops&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white) ![GitLab CI](https://img.shields.io/badge/GitLab_CI-FC6D26?style=flat-square&logo=gitlab&logoColor=white) ![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=flat-square&logo=jenkins&logoColor=white) |
 | **IaC Security & FinOps** | ![tfsec](https://img.shields.io/badge/tfsec-00C49F?style=flat-square&logo=security&logoColor=white) ![Checkov](https://img.shields.io/badge/Checkov-2C3E50?style=flat-square&logo=checkmarx&logoColor=white) ![Trivy](https://img.shields.io/badge/Trivy-00A4E4?style=flat-square&logo=aqua&logoColor=white) ![Infracost](https://img.shields.io/badge/Infracost-00D2FF?style=flat-square&logo=infracost&logoColor=black) ![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=flat-square&logo=sonarqube&logoColor=white) |
 | **Observability & SRE** | ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white) ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white) ![Datadog](https://img.shields.io/badge/Datadog-632CA6?style=flat-square&logo=datadog&logoColor=white) ![ELK](https://img.shields.io/badge/ELK_Stack-005571?style=flat-square&logo=elastic&logoColor=white) ![Azure Monitor](https://img.shields.io/badge/Azure_Monitor-0078D4?style=flat-square&logo=microsoft-azure&logoColor=white) |
+| **Business Intelligence & Analytics** | ![Tableau](https://img.shields.io/badge/Tableau_Desktop-E97627?style=flat-square&logo=tableau&logoColor=white) ![Tableau Server](https://img.shields.io/badge/Tableau_Server-E97627?style=flat-square&logo=tableau&logoColor=white) ![Tableau Cloud](https://img.shields.io/badge/Tableau_Cloud-0078D4?style=flat-square&logo=tableau&logoColor=white) ![Tableau Bridge](https://img.shields.io/badge/Tableau_Bridge-2A7B9B?style=flat-square&logo=tableau&logoColor=white) ![Power BI](https://img.shields.io/badge/Microsoft_Power_BI-F2C811?style=flat-square&logo=power-bi&logoColor=black) |
+| **Databases & Enterprise Data** | ![MS SQL Server](https://img.shields.io/badge/Microsoft_SQL_Server-CC292B?style=flat-square&logo=microsoft-sql-server&logoColor=white) ![T-SQL](https://img.shields.io/badge/T--SQL-0078D4?style=flat-square&logo=microsoft&logoColor=white) ![Azure SQL](https://img.shields.io/badge/Azure_SQL-0078D4?style=flat-square&logo=microsoft-azure&logoColor=white) ![SSIS & SSRS](https://img.shields.io/badge/SSIS_%26_SSRS-2C3E50?style=flat-square&logo=databricks&logoColor=white) |
 | **Scripting & Automation** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![Bash](https://img.shields.io/badge/Bash_Shell-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white) ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white) ![Go](https://img.shields.io/badge/Golang-00ADD8?style=flat-square&logo=go&logoColor=white) ![YAML](https://img.shields.io/badge/YAML-CB171E?style=flat-square&logo=yaml&logoColor=white) |
 | **State, Storage & Secrets** | ![Azure Blob](https://img.shields.io/badge/Azure_Blob_Storage-0078D4?style=flat-square&logo=microsoft-azure&logoColor=white) ![Azure Key Vault](https://img.shields.io/badge/Azure_Key_Vault-0078D4?style=flat-square&logo=microsoft-azure&logoColor=white) ![HashiCorp Vault](https://img.shields.io/badge/HashiCorp_Vault-000000?style=flat-square&logo=vault&logoColor=white) ![AWS S3](https://img.shields.io/badge/AWS_S3-569A31?style=flat-square&logo=amazon-s3&logoColor=white) |
 
@@ -162,6 +171,11 @@ flowchart TD
 │     DEPLOYMENT SPEED    │   INFRASTRUCTURE DRIFT  │   EXPERIENCE BACKBONE   │
 │         10x Faster      │         Zero Drift      │      5+ Yrs DevOps      │
 │    Lead Time Reduction  │   Automated Cron Sync   │      10+ Yrs IT Total   │
+└─────────────────────────┴─────────────────────────┴─────────────────────────┘
+┌─────────────────────────┬─────────────────────────┬─────────────────────────┐
+│   DATA & BI RELIABILITY │   HYBRID DATA ROUTING   │   DATABASE RESILIENCE   │
+│         99.9%           │       Live Bridge       │    AlwaysOn Clusters    │
+│   Tableau Extract Sync  │   Tableau Bridge Agents │   MS SQL Data Integrity │
 └─────────────────────────┴─────────────────────────┴─────────────────────────┘
 ```
 
@@ -198,6 +212,7 @@ flowchart TD
 * 🚀 [**terraform-azure-enterprise-infrastructure**](./terraform-azure-enterprise-infrastructure): Production-grade, modular Azure Landing Zone engineered using advanced Terraform `for_each` across Resource Groups, Hub & Spoke VNets, Flattened Subnets, Dynamic NSG Rules, Secure Storage Accounts (Azure Blob State Lock), and Azure Key Vault with 7-stage DevSecOps CI/CD pipeline automation.
 * 🏗️ **Azure Enterprise Landing Zones:** Implementing scalable Hub-and-Spoke networking, VNet Peering, Azure Firewall, Application Gateways, and Private Endpoints completely coded in modular Terraform.
 * ☸️ **Kubernetes Platform Engineering:** Automated deployment of Azure Kubernetes Service (AKS) clusters integrated with GitOps delivery (ArgoCD), Ingress Controllers, Cert-Manager, and Azure AD Pod Identity.
+* 📊 **Enterprise BI & Data Platform Architecture:** Production administration of **Tableau Server** distributed clusters, **Tableau Cloud** SaaS tenant governance, secure hybrid connectivity via **Tableau Bridge** clients for real-time and scheduled extract refreshes, enterprise **Power BI** dashboard integration, and mission-critical **Microsoft SQL Server (MS SQL)** administration (AlwaysOn Availability Groups, automated maintenance, disaster recovery, and query performance tuning).
 * 🔒 **Zero-Trust DevSecOps Pipelines:** Embedding policy-as-code validation (OPA / Checkov) into Azure DevOps and GitHub Actions pipelines to block vulnerable code prior to merge approval.
 * 📉 **Continuous FinOps Governance:** Automating real-time infrastructure cost forecasts with Infracost to establish organizational accountability for cloud consumption.
 
